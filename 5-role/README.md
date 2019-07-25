@@ -147,7 +147,6 @@ Create your role handler in `roles/apache-simple/handlers/main.yml`.
 Add tasks to your role in `roles/apache-simple/tasks/main.yml`.
 
 ```yml
-{% raw %}
 ---
 # tasks file for apache-simple
 - name: install httpd packages
@@ -178,7 +177,6 @@ Add tasks to your role in `roles/apache-simple/tasks/main.yml`.
     name: httpd
     state: started
     enabled: yes
-{% endraw %}    
 ```
 
 ### Step 7:
