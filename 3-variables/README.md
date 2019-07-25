@@ -63,7 +63,6 @@ Add a play definition and some variables to your playbook.  These include addtio
 Add a new task called *install httpd packages*.
 
 ```yml
-{% raw %}
   tasks:
     - name: install httpd packages
       yum:
@@ -71,11 +70,9 @@ Add a new task called *install httpd packages*.
         state: present
       with_items: "{{ httpd_packages }}"
       notify: restart apache service
-{% endraw %}
 ```
 
 ---
-{% raw %}
 **NOTE**
 > What the Helsinki is happening here!?
 
@@ -86,7 +83,6 @@ is a list of those packages +
 - `with_items: "{{ httpd_packages }}` This is your loop which is instructing Ansible to perform this task on
 every `item` in `httpd_packages`
 - `notify: restart apache service` This statement is a `handler`, so we'll come back to it in Section 3.
-{% endraw %}
 
 ---
 
@@ -184,7 +180,6 @@ Your new, improved playbook is done! But don't run it just yet, we'll do that in
 looks the way you intended.  If not, now is the time for us to fix it up. The figure below shows line counts and spacing.
 
 ```yml
-{% raw %}
 ---
 - hosts: web
   name: This is a play within a playbook
@@ -232,7 +227,6 @@ looks the way you intended.  If not, now is the time for us to fix it up. The fi
         name: httpd
         state: restarted
         enabled: yes
-{% endraw %}        
 ```
 
 ---
